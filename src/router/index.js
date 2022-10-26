@@ -3,12 +3,15 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '../views/Login/LoginPage.vue'
 import Logout from '../views/Login/LogoutPage.vue'
-import PhasesList from '../views/Phases/PhasesList.vue'
-import SectorsList from '../views/Sectors/SectorsList.vue'
-import CategoriesList from '../views/Categories/CategoriesList.vue'
-import PostsList from '../views/UserManagement/Posts/PostsList.vue'
-import OfficersList from '../views/UserManagement/Officer/OfficerList.vue'
-import UsersList from '../views/UserManagement/Users/UserList.vue'
+import PhasesList from '../views/MasterPages/Phases/PhasesList.vue'
+import SectorsList from '../views/MasterPages/Sectors/SectorsList.vue'
+import ComplaintTypesList from '../views/MasterPages/ComplaintTypes/ComplaintTypesList.vue'
+import ComplaintsList from '../views/Complaints/ComplaintsList.vue'
+import CategoriesList from '../views/MasterPages/Categories/CategoriesList.vue'
+import PostsList from '../views/MasterPages/UserManagement/Posts/PostsList.vue'
+import OfficersList from '../views/MasterPages/UserManagement/Officer/OfficerList.vue'
+import UsersList from '../views/MasterPages/UserManagement/Users/UserList.vue'
+import ComplaintDetails from '../views/Complaints/ComplaintDetails/ComplaintDetails.vue'
 import loginCheck from '@/middleware/loginCheck'
 
 Vue.use(VueRouter)
@@ -33,6 +36,11 @@ const routes = [
     component: Logout
   },
   {
+    path: '/complaints',
+    name: 'Complaints',
+    component: ComplaintsList
+  },
+  {
     path: '/phases',
     name: 'Phases',
     component: PhasesList
@@ -48,6 +56,11 @@ const routes = [
     component: CategoriesList
   },
   {
+    path: '/complainttypes',
+    name: 'ComplaintTypes',
+    component: ComplaintTypesList
+  },
+  {
     path: '/posts',
     name: 'Posts',
     component: PostsList
@@ -61,6 +74,11 @@ const routes = [
     path: '/users/:id?',
     name: 'Users',
     component: UsersList
+  },
+  {
+    path: '/complaintDetails/:id?',
+    name: 'ComplaintDetails',
+    component: ComplaintDetails
   },
 ]
 
